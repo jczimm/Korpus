@@ -7,10 +7,6 @@ export class Story extends React.Component {
     componentDidMount() {
         // If there is a footer, i.e., if audio exists:
         if ($('#footer').length !== 0) {
-            // $.ajax({
-            //     url: 'js/txt_sync.js',
-            //     dataType: 'script',
-            // });
             initializeTxtSync();
         }
         // If video exists:

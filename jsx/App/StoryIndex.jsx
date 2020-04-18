@@ -1,7 +1,7 @@
 import React from 'react';
-import id from 'shortid';
-import { Link } from 'react-router-dom';
-import ReactDOMServer from 'react-dom/server';
+// import id from 'shortid';
+// import { Link } from 'react-router-dom';
+// import ReactDOMServer from 'react-dom/server';
 
 export class StoryIndex extends React.Component {
     componentDidMount() {
