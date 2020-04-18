@@ -296,3 +296,9 @@ video {
 #navbar a:active {
 	background-color: rgb(172,21,72);
 }
+
+main.content-wrapper {
+	width: 100%;
+	max-width: 34em;
+	margin: 0 auto;
+}
