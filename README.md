@@ -22,21 +22,23 @@ babel --plugins transform-react-jsx text_display.jsx --out-file text_display.js
 
 **To view the website in Chrome (for development):**
 
-1. Compile the website by running these commands.  
-    ```sh
-    npm install
-    npm run watch
-    ```
-2. Then open the file `index.html`.
+Compile the website by running these commands.  
+```sh
+npm install
+npm run watch
+```
+
+Then open the file `index.html`.
 
 **To build the website for production:**
 
 Run these commands:
-
 ```sh
 npm install
 npm run build
 ```
+
+Then take `index.html`, `js/`, `images/`, and `css/`.
 
 # To-do to incorporate recent improvements into BrownCLPS/LingView:
 (since 4/18/2020)
