@@ -48,10 +48,13 @@ export class StoryIndex extends React.Component {
                     timed = '✘';
                 }
 
+                const speakers = index[story]['speakers'].join(', ').trim();
+                const dateCreated = index[story]['date_created'];
+
                 // const link = ReactDOMServer.renderToString(`<Link to={'/story/${index[story]['story ID']}'}>${mainTitle}</Link>`);
                 const link = `<a href='#/story/${index[story]['story ID']}'>${mainTitle}</a>`;
                 
-                storyList.push([link, translatedTitle, index[story]['author'], timed]);
+                storyList.push([link, translatedTitle, speakers, index[story]['author'], dateCreated, timed]);
                 // storyList.push(
                 //     <li key={id.generate()}>
                 //         <Link to={`/story/${index[story]['story ID']}`}>{story}</Link>
@@ -66,7 +69,9 @@ export class StoryIndex extends React.Component {
                 columns: [
                     { title: "Title (A'ingae)" },
                     { title: "Title (English)" },
+                    { title: "Speakers" },
                     { title: "Author" },
+                    { title: "Date" },
                     { title: "Media" }
                 ]
             });
