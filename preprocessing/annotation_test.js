@@ -11,7 +11,7 @@ const elanFilesDir = "data/elan_files/";
 const jsonFilesDir = "data/json_files/";
 const isoFileName = "preprocessing/iso_dict.json";
 const indexFileName = "data/index2.json"; // stores metadata for all documents
-const dbFileName = "data/fake_database.json";
+const dbFileName = "data/fake_stories-database.json";
 
 //console.log("Converting all files to .JSON and re-building the database. The index and metadata will also be updated during this process. Status messages will appear below:")
 

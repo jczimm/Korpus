@@ -3,7 +3,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 let obj = JSON.parse(fs.readFileSync("data/index.json", "utf8"));
-let DB = JSON.parse(fs.readFileSync("data/database.json", "utf8"));
+let DB = JSON.parse(fs.readFileSync("data/stories-database.json", "utf8"));
 
 let filename;
 let data;
@@ -111,7 +111,7 @@ try {
 	
 	fs.writeFileSync("data/index.json", JSON.stringify(obj, null, 2));
 	DB["index"] = obj;
-	fs.writeFileSync("data/database.json", JSON.stringify(DB, null, 2));
+	fs.writeFileSync("data/stories-database.json", JSON.stringify(DB, null, 2));
 	console.log("✅" + "  " + "File successfully deleted!");
 	console.log("\nYou've successfully deleted this file. However, this will not be displayed on the index until you run the rebuild.js script. You can run this script from the root directory with the command 'node preprocessing/rebuild.js'. We recommend doing this immediately.");
 } catch(err) {

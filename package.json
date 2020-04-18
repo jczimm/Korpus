@@ -25,6 +25,12 @@
     "webpack": "^3.3.0",
     "xml2js": "^0.4.17"
   },
+  "devDependencies": {
+    "airtable": "^0.8.1",
+    "child-process-promise": "^2.2.1",
+    "dotenv": "^8.2.0",
+    "markdown-it": "^10.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
