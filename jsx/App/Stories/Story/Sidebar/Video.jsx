@@ -29,11 +29,13 @@ export class Video extends React.Component {
 		// Match times:
 		var audio = document.getElementById('audio');
 		var video = document.getElementById('video');
-		if (!audio.paused) {
+		if (audio && !audio.paused) {
 			audio.pause();
 			video.play();
 		}
-		video.currentTime = audio.currentTime;
+		if (video && audio) {
+			video.currentTime = audio.currentTime;
+		}
 	}
 
 	static hide() {
@@ -62,10 +64,12 @@ export class Video extends React.Component {
 		// Match times:
 		var audio = document.getElementById("audio");
 		var video = document.getElementById("video");
-		if (!video.paused) {
+		if (video && !video.paused) {
 			video.pause();
 			audio.play();
 		}
-		audio.currentTime = video.currentTime;
+		if (audio && video) {
+			audio.currentTime = video.currentTime;
+		}
 	}
 }

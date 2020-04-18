@@ -9,7 +9,10 @@ function scrollIntoViewIfNeeded(target) {
     } 
 }
 
-function sync(current_time) {
+const ts_tag_array = document.getElementsByClassName("labeledTimeBlock");
+const ts_start_time_array = [];
+const ts_stop_time_array = [];
+export function sync(current_time) {
 	for (var i=0; i<ts_tag_array.length; i++) {
         // Somewhat hacky solution: decrease current_time by 0.001 to avoid highlighting before player starts
 		if ((current_time-0.001 >= parseFloat(ts_start_time_array[i])/1000.0) && (current_time <= parseFloat(ts_stop_time_array[i])/1000.0)) {
@@ -26,24 +29,6 @@ function sync(current_time) {
 	}
 }
 
-
-try {
-    media = document.querySelectorAll("[data-live='true']")[0];
-    media.setAttribute("ontimeupdate", "sync(this.currentTime)");
-    media.setAttribute("onclick", "sync(this.currentTime)");
-} catch (err) {
-    console.log(err);
-}
-
-
-ts_tag_array = document.getElementsByClassName("labeledTimeBlock");
-ts_start_time_array = [];
-ts_stop_time_array = [];
-
-for (var i = 0; i < ts_tag_array.length; i++) {
-    ts_start_time_array[i] = ts_tag_array[i].getAttribute("data-start_time");
-    ts_stop_time_array[i] = ts_tag_array[i].getAttribute("data-end_time");
-}
 // }
 
 // I/P: t, an integer number of milliseconds
@@ -61,6 +46,21 @@ function jumpToTime(t) {
   }
 }
 
-$(".timeStamp").click(function() {
-    jumpToTime($(this).data('start_time'));
-});
+export function initialize() {
+    try {
+        const media = document.querySelectorAll("[data-live='true']")[0];
+        media.setAttribute("ontimeupdate", "sync(this.currentTime)");
+        media.setAttribute("onclick", "sync(this.currentTime)");
+    } catch (err) {
+        console.log(err);
+    }
+
+    for (var i = 0; i < ts_tag_array.length; i++) {
+        ts_start_time_array[i] = ts_tag_array[i].getAttribute("data-start_time");
+        ts_stop_time_array[i] = ts_tag_array[i].getAttribute("data-end_time");
+    }
+
+    $(".timeStamp").click(function() {
+        jumpToTime($(this).data('start_time'));
+    });
+}
