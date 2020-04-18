@@ -39,7 +39,3 @@ npm run build
 ```
 
 Then take `index.html`, `js/`, `images/`, and `css/`.
-
-# To-do to incorporate recent improvements into BrownCLPS/LingView:
-(since 4/18/2020)
-* Allow stories index to be configurable (from the code)
